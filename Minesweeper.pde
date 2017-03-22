@@ -22,8 +22,6 @@ void setup ()
             buttons[r][c] = new MSButton(r,c);
         }
     }
-    
-    
     setBombs();
 }
 public void setBombs()
@@ -152,21 +150,21 @@ public class MSButton
         //your code here
         if(isValid(row,col) == true)
         {
-            if(bombs.contains(buttons[row+1][col-1]))
+            if(isValid(row+1,col-1) && bombs.contains(buttons[row+1][col-1]))
                 numBombs++;
-            if(bombs.contains(buttons[row+1][col]))
+            if(isValid(row+1,col) && bombs.contains(buttons[row+1][col]))
                 numBombs++;
-            if(bombs.contains(buttons[row+1][col+1]))
+            if(isValid(row+1,col+1) && bombs.contains(buttons[row+1][col+1]))
                 numBombs++;
-            if(bombs.contains(buttons[row][col+1]))
+            if(isValid(row,col+1) && bombs.contains(buttons[row][col+1]))
                 numBombs++;
-            if(bombs.contains(buttons[row][col-1]))
+            if(isValid(row,col-1) && bombs.contains(buttons[row][col-1]))
                 numBombs++;
-            if(bombs.contains(buttons[row-1][col-1]))
+            if(isValid(row-1,col-1) && bombs.contains(buttons[row-1][col-1]))
                 numBombs++;
-            if(bombs.contains(buttons[row-1][col]))
+            if(isValid(row-1,col) && bombs.contains(buttons[row-1][col]))
                 numBombs++;
-            if(bombs.contains(buttons[row-1][col-1]))
+            if(isValid(row-1,col+1) && bombs.contains(buttons[row-1][col+1]))
                 numBombs++;
         }
         return numBombs;
